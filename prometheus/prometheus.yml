@@ -12,7 +12,7 @@ scrape_configs:
   follow_redirects: true
   static_configs:
   - targets:
-    - my-exporter:9115
+    - yarn-exporter:9115
 - job_name: 'Yarn-Apps-Prod'
   honor_timestamps: true
   scrape_interval: 15s
@@ -22,4 +22,4 @@ scrape_configs:
   follow_redirects: true
   static_configs:
   - targets:
-    - my-exporter:9115
+    - yarn-exporter:9115

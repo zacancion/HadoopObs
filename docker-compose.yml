@@ -4,14 +4,14 @@ services:
   prometheus:
     image: prom/prometheus:latest
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - "9090:9090"
     networks:
       - monitoring
 
-  my-exporter:
-    build: ./my-exporter
+  yarn-exporter:
+    build: ./yarn-exporter
     ports:
       - "9115:9115"
     environment:
@@ -21,6 +21,8 @@ services:
 
   grafana:
     image: grafana/grafana:latest
+    volumes:
+    - ./grafana/datasources.yaml:/etc/grafana/provisioning/datasources/datasources.yaml
     ports:
       - "3000:3000"
     networks:
