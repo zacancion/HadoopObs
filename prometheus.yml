@@ -1,0 +1,25 @@
+global:
+  scrape_interval: 15s
+  scrape_timeout: 10s
+  evaluation_interval: 1m
+scrape_configs:
+- job_name: 'Yarn-Cluster-Prod'
+  honor_timestamps: true
+  scrape_interval: 15s
+  scrape_timeout: 10s
+  metrics_path: /metrics
+  scheme: http
+  follow_redirects: true
+  static_configs:
+  - targets:
+    - my-exporter:9115
+- job_name: 'Yarn-Apps-Prod'
+  honor_timestamps: true
+  scrape_interval: 15s
+  scrape_timeout: 10s
+  metrics_path: /metrics_yarn_apps
+  scheme: http
+  follow_redirects: true
+  static_configs:
+  - targets:
+    - my-exporter:9115
