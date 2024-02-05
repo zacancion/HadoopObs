@@ -1,10 +1,12 @@
 # HadoopObs
 Proyecto que integra la API de Yarn con Grafana/Promethues
 
-# Pasos
-## Definir la variable de ambiente YARN_API_URL
+## Pasos
+### Definir la variable de ambiente YARN_API_URL
+```bash
 export YARN_API_URL=http://miServidor:miPuerto
-## Ejecutar Docker compose
+```
+### Ejecutar Docker Compose
 ```bash
 docker compose up
 ```
