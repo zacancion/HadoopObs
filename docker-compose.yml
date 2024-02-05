@@ -15,7 +15,7 @@ services:
     ports:
       - "9115:9115"
     environment:
-      - YARN_API_URL=http://<server>:<port>
+      - YARN_API_URL=${YARN_API_URL}
     networks:
       - monitoring
 
