@@ -19,12 +19,26 @@ services:
     networks:
       - monitoring
 
+  hdfs-exporter:
+    build: ./hdfs-exporter
+    ports:
+      - "9116:9116"
+    environment:
+      - HDFS_API_URL=${HDFS_API_URL}
+    networks:
+      - monitoring
+
   grafana:
     image: grafana/grafana:latest
     volumes:
     - ./grafana/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yaml
     - ./grafana/provisioning/dashboards.yml:/etc/grafana/provisioning/dashboards/main.yaml
     - ./grafana/provisioning/dashboards:/var/lib/grafana/dashboards
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: 'admin'  # Establece tu contraseña deseada aquí
+      GF_SECURITY_DISABLE_INITIAL_ADMIN_CREATION: 'false'
+      GF_SECURITY_ADMIN_USER: 'admin'
+      GF_USERS_ALLOW_SIGN_UP: 'false'
     ports:
       - "3000:3000"
     networks:
