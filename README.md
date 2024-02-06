@@ -27,3 +27,4 @@ docker compose up
 ## Contacto
 Zacarias Daniel Apaza
 email: zacancion@gmail.com
+Linkedin: https://www.linkedin.com/in/zacariasapaza/
