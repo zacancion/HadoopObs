@@ -1,6 +1,8 @@
 # HadoopObs
 Proyecto de observabilidad de Hadoop (YARN/HDFS) por medio de sus APIs.
 
+![HadoopObs](images/Hadoop-Obs.drawio.png)
+
 ## Pasos
 ### Definir la variable de ambiente YARN_API_URL
 ```bash
